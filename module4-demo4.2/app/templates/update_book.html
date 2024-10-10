@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Update Book</h1>
+
+    <!-- Update Book Form -->
+    <form method="POST" action="{{ url_for('books.update_book', book_id=book.book_id) }}">
+        <div class="form-group">
+            <label for="book_name">Book Name</label>
+            <input type="text" class="form-control" id="book_name" name="book_name" value="{{ book.book_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control" id="genre" name="genre" value="{{ book.genre }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Book</button>
+        <a href="{{ url_for('books.book') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+l>

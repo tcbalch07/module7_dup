@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tucker's Bookstore{% endblock %}</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6; /* Light blue background */
+            text-align: center;
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background-color: #001f3f; /* Dark blue for nav bar */
+            padding: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container for main content */
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .form-group, .form-control {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-primary, .btn-secondary {
+            background-color: #001f3f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #003366;
+        }
+
+        /* Catalog Page Styling */
+        .catalog-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            justify-items: center;
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+
+        .book-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .book-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .price, .title, .author {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('catalog') }}">Catalog</a></li>
+            <li><a href="{{ url_for('events') }}">Events</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('books.suggest_books') }}">Suggest Books</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Book Catalog{% endblock %}
+
+{% block content %}
+    <h1>Book Catalog</h1>
+    <div class="catalog-container">
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Forged.jpg') }}" alt="Forged by Bart Ehrman">
+            <p class="price">$15.99</p>
+            <p class="title">Forged</p>
+            <p class="author">by Bart Ehrman</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='SimplyJesus.jpg') }}" alt="Simply Jesus by NT Wright">
+            <p class="price">$14.99</p>
+            <p class="title">Simply Jesus</p>
+            <p class="author">by NT Wright</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Anthony.jpg') }}" alt="What I Believe by Anthony Kenny">
+            <p class="price">$11.99</p>
+            <p class="title">What I Believe</p>
+            <p class="author">by Anthony Kenny</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Friedman.jpg') }}" alt="Who Wrote The Bible by Richard Elliot Friedman">
+            <p class="price">$20.99</p>
+            <p class="title">Who Wrote The Bible?</p>
+            <p class="author">by Richard Elliot Friedman</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Hitchens.jpg') }}" alt="God is Not Great by Christopher Hitchens">
+            <p class="price">$10.99</p>
+            <p class="title">God is Not Great</p>
+            <p class="author">by Christopher Hitchens</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Lewis.jpg') }}" alt="Mere Christianity by CS Lewis">
+            <p class="price">$12.99</p>
+            <p class="title">Mere Christianity</p>
+            <p class="author">by CS Lewis</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='DaleAllison.jpg') }}" alt="The Resurrection of Jesus by Dale Allison Jr.">
+            <p class="price">$19.99</p>
+            <p class="title">The Resurrection of Jesus</p>
+            <p class="author">by Dale Allison Jr.</p>
+        </div>
+        <div class="book-item">
+            <img src="{{ url_for('static', filename='Turek.jpg') }}" alt="I don't have enough faith to be an Atheist by Frank Turek">
+            <p class="price">$16.99</p>
+            <p class="title">I Don't Have Enough Faith to Be an Atheist</p>
+            <p class="author">by Frank Turek</p>
+        </div>
+    </div>
+{% endblock %}
