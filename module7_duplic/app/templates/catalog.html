@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+<h1>Book Catalog</h1>
+<div class="catalog-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book['title'] }}</td>
+                <td>{{ book['author'] }}</td>
+                <td>${{ book['price'] }}</td>
+                <td>
+                    <a href="{{ url_for('books.update_book', book_id=book['books_id']) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url_for('books.delete_book', book_id=book['books_id']) }}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+
